@@ -4,6 +4,7 @@ import maze from './maze';
 export default function MazeCrawler() {
     // const messages = [];
     const [messages, setMessages] = useState([]);
+
     function crawl(start) {
         const path = [];
         let solved = false;
@@ -86,15 +87,17 @@ export default function MazeCrawler() {
                     crawl([3, 0]);
                 }}
             >
-                Start
+                start
             </button>
-            {
-                <div>
-                    {messages.map((message, index) => {
-                        return <h6 key={index}>{message}</h6>;
-                    })}
-                </div>
-            }
+            <div>
+                {
+                    <div>
+                        {messages.map((message, index) => {
+                            return <h6 key={index}>{message}</h6>;
+                        })}
+                    </div>
+                }
+            </div>
         </div>
     );
 }
