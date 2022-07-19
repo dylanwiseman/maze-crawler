@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import maze from './maze';
+// import maze from './maze';
+import mazeBuilder from './mazeBuilder';
 
 export default function MazeCrawler() {
+    // const maze = mazeBuilder();
     // const messages = [];
     const [messages, setMessages] = useState([]);
+    const [maze, setMaze] = useState(mazeBuilder());
 
     function crawl(start) {
+        // console.log('starting crawl');
+        console.log(maze);
         const path = [];
         let solved = false;
         const traverse = (row, col) => {
@@ -15,6 +20,7 @@ export default function MazeCrawler() {
                 messages.push(
                     `MazeCrawler finished the maze at Row: ${row}, Col: ${col}`
                 );
+                // console.log('solved!');
 
                 path.forEach((step) => {
                     document
@@ -28,17 +34,18 @@ export default function MazeCrawler() {
                 // ]);
                 return path;
             } else if (maze[row][col] === 1 && !solved) {
+                // console.log('traversing');
                 messages.push(`Traversed to: (Row: ${row}, Col: ${col})`);
                 path.push([row, col]);
                 maze[row][col] = 9;
                 if (row < maze.length - 1 && !solved) {
                     traverse(row + 1, col);
                 }
-                if (row > 0 && !solved) {
-                    traverse(row - 1, col);
-                }
                 if (col < maze[row].length && !solved) {
                     traverse(row, col + 1);
+                }
+                if (row > 0 && !solved) {
+                    traverse(row - 1, col);
                 }
                 if (col > 0 && !solved) {
                     traverse(row, col - 1);
@@ -88,6 +95,14 @@ export default function MazeCrawler() {
                 }}
             >
                 start
+            </button>
+            <button
+                className="start-button"
+                onClick={() => {
+                    setMaze(mazeBuilder());
+                }}
+            >
+                new cave
             </button>
             <div>
                 {
