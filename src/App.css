@@ -43,6 +43,9 @@ button {
 .two {
     background-color: blue;
 }
+.seven {
+    background-color: lightgray;
+}
 
 .path {
     background-color: greenyellow !important;

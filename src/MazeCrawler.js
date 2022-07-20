@@ -33,7 +33,10 @@ export default function MazeCrawler() {
                 //     `MazeCrawler finished the maze at Row: ${row}, Col: ${col}`,
                 // ]);
                 return path;
-            } else if (maze[row][col] === 1 && !solved) {
+            } else if (
+                (maze[row][col] === 1 || maze[row][col] === 7) &&
+                !solved
+            ) {
                 // console.log('traversing');
                 messages.push(`Traversed to: (Row: ${row}, Col: ${col})`);
                 path.push([row, col]);
@@ -76,7 +79,8 @@ export default function MazeCrawler() {
                                     <div
                                         className={`box ${
                                             box === 1 ? 'one' : ''
-                                        } ${box === 9 ? 'nine' : ''} ${
+                                        } ${box === 9 ? 'nine' : ''} 
+                                        ${box === 7 ? 'seven' : ''} ${
                                             box === 2 ? 'two' : ''
                                         }`}
                                         key={index}
