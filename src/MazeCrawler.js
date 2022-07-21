@@ -70,6 +70,9 @@ export default function MazeCrawler() {
             <div className="trees">
                 <img src={Trees} alt="" width="200" height="100" />
             </div>
+            <div className="trees-two">
+                <img src={Trees} alt="" width="200" height="100" />
+            </div>
             <div className="environment">
                 <div className="maze-container">
                     {maze.map((row, index) => {
