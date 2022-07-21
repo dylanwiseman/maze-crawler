@@ -1,129 +1,4 @@
-// import React from 'react';
-// import blankMaze from './maze';
-
 export default function mazeBuilder() {
-    // const blankMaze = [
-    //     [
-    //         0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    //     [
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    //     ],
-    // ];
     const blankMaze = [
         [
             0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -303,20 +178,11 @@ export default function mazeBuilder() {
     const startSnake = { row: 1, col: 4, path: { 14: 1 } };
     const endSnake = { row: 1, col: 76, path: { 176: 1 } };
 
-    // const generateCaves = (newMaze) => {
-    //     let viableMaze = false;
-    //     let generatedMaze = newMaze;
-    //     let mazesCreated = 0;
-
     const searchForOtherSnake = (newMaze) => {
         let counter = 0;
         let startSnakeConnection = 0;
         let endSnakeConnection = 0;
         while (
-            // endSnake.path[`${startSnake.row}${startSnake.col}`] !== 1 &&
-            // endSnake.path[parseInt(`${startSnake.row}${startSnake.col}`)] !==
-            //     1 &&
-            // startSnake.path[parseInt(`${endSnake.row}${endSnake.col}`)] !== 1 &&
             newMaze[startSnake.row][startSnake.col] !== 7 &&
             newMaze[endSnake.row][endSnake.col] !== 1 &&
             counter <= 300
@@ -324,44 +190,22 @@ export default function mazeBuilder() {
             // startSnake random movement:
             newMaze[startSnake.row][startSnake.col] = 1;
             let movementArrayStart = ['up', 'down', 'left', 'right', 'right'];
-            if (
-                startSnake.row <= 1
-                // startSnake.path[
-                //     parseInt(`${startSnake.row - 1}${startSnake.col}`)
-                // ] === 1
-            ) {
+            if (startSnake.row <= 1) {
                 movementArrayStart.splice(movementArrayStart.indexOf('up'), 1);
             }
-            if (
-                startSnake.row >=
-                newMaze.length - 2
-                // startSnake.path[
-                //     parseInt(`${startSnake.row + 1}${startSnake.col}`)
-                // ] === 1
-            ) {
+            if (startSnake.row >= newMaze.length - 2) {
                 movementArrayStart.splice(
                     movementArrayStart.indexOf('down'),
                     1
                 );
             }
-            if (
-                startSnake.col <= 1
-                // startSnake.path[
-                //     parseInt(`${startSnake.row}${startSnake.col - 1}`)
-                // ] === 1
-            ) {
+            if (startSnake.col <= 1) {
                 movementArrayStart.splice(
                     movementArrayStart.indexOf('left'),
                     1
                 );
             }
-            if (
-                startSnake.col >=
-                newMaze[0].length - 2
-                // startSnake.path[
-                //     parseInt(`${startSnake.row}${startSnake.col + 1}`)
-                // ] === 1
-            ) {
+            if (startSnake.col >= newMaze[0].length - 2) {
                 movementArrayStart.splice(
                     movementArrayStart.indexOf('right'),
                     1
@@ -395,31 +239,17 @@ export default function mazeBuilder() {
 
             // endSnake random movement:
             let movementArrayEnd = ['up', 'down', 'left', 'left', 'right'];
-            if (
-                endSnake.row <= 1
-                // newMaze[endSnake.row - 1][endSnake.col] === 1
-            ) {
+            if (endSnake.row <= 1) {
                 movementArrayEnd.splice(movementArrayEnd.indexOf('up'), 1);
             }
-            if (
-                endSnake.row >=
-                newMaze.length - 2
-                // newMaze[endSnake.row + 1][endSnake.col] === 1
-            ) {
+            if (endSnake.row >= newMaze.length - 2) {
                 movementArrayEnd.splice(movementArrayEnd.indexOf('down'), 1);
             }
-            if (
-                endSnake.col <= 1
-                // newMaze[endSnake.row][endSnake.col - 1] === 1
-            ) {
+            if (endSnake.col <= 1) {
                 movementArrayEnd.splice(movementArrayEnd.indexOf('left'), 1);
                 movementArrayEnd.splice(movementArrayEnd.indexOf('left'), 1);
             }
-            if (
-                endSnake.col >=
-                newMaze[0].length - 2
-                // newMaze[endSnake.row][endSnake.col + 1] === 1
-            ) {
+            if (endSnake.col >= newMaze[0].length - 2) {
                 movementArrayEnd.splice(movementArrayEnd.indexOf('right'), 1);
             }
             if (movementArrayEnd.length !== 0) {
@@ -445,7 +275,6 @@ export default function mazeBuilder() {
             }
             newMaze[endSnake.row][endSnake.col] = 7;
             counter++;
-            // let parseInts = parseInt(`${startSnake.row}${startSnake.col}`);
             if (
                 endSnake.path[
                     parseInt(`${startSnake.row}${startSnake.col}`)
@@ -453,7 +282,6 @@ export default function mazeBuilder() {
             ) {
                 endSnakeConnection = parseInt(`${endSnake.row}${endSnake.col}`);
                 console.log('econnect: ', endSnakeConnection);
-                // viableMaze = true;
             }
             if (
                 startSnake.path[parseInt(`${endSnake.row}${endSnake.col}`)] ===
@@ -463,23 +291,10 @@ export default function mazeBuilder() {
                     `${endSnake.row}${endSnake.col}`
                 );
                 console.log('sconnect: ', startSnakeConnection);
-                // viableMaze = true;
             }
         }
-        console.log(counter);
-        console.log('startSnake: ', startSnake);
-        console.log('endSnake: ', endSnake);
-        // console.log(newMaze);
         return newMaze;
     };
-    //     while (viableMaze === false && mazesCreated < 10) {
-    //         generatedMaze = searchForOtherSnake(newMaze);
-    //         mazesCreated++;
-    //         console.log(mazesCreated);
-    //     }
-    //     return generatedMaze;
-    // };
 
     return searchForOtherSnake(blankMaze);
-    // return generateCaves(blankMaze);
 }
