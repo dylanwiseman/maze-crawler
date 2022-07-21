@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import maze from './maze';
 import mazeBuilder from './mazeBuilder';
+// import blankMaze from './maze';
 import Trees from './trees.png';
 import Mountains from './mountains1.png';
 import MountainsR from './mountainsright.png';
