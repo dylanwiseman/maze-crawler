@@ -4,13 +4,14 @@
         darkblue,
         purple,
         orange,
-        lightblue
+        lightblue,
+        rgb(160, 255, 255)
     );
     background-size: 300px 200%;
 
-    -webkit-animation: Sunset 120s ease infinite;
-    -moz-animation: Sunset 120s ease infinite;
-    animation: Sunset 120s ease infinite;
+    -webkit-animation: Sunset 180s ease infinite;
+    -moz-animation: Sunset 180s ease infinite;
+    animation: Sunset 180s ease infinite;
 }
 
 @-webkit-keyframes Sunset {

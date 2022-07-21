@@ -67,7 +67,7 @@ export default function MazeCrawler() {
 
     return (
         <div className="container" id="gradient">
-            <h1>It's getting dark... you should probably head home...</h1>
+            <h1>It's getting late... you should probably head home...</h1>
             <div className="trees">
                 <img src={Trees} alt="" width="200" height="100" />
             </div>
