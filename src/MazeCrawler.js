@@ -67,6 +67,7 @@ export default function MazeCrawler() {
 
     return (
         <div className="container" id="gradient">
+            <h1>It's getting dark... you should probably head home...</h1>
             <div className="trees">
                 <img src={Trees} alt="" width="200" height="100" />
             </div>
@@ -102,23 +103,25 @@ export default function MazeCrawler() {
                         );
                     })}
                 </div>
-                <button
-                    className="start-button"
-                    onClick={() => {
-                        crawl([0, 4]);
-                    }}
-                >
-                    start
-                </button>
-                <button
-                    className="start-button"
-                    onClick={() => {
-                        setMaze(mazeBuilder());
-                    }}
-                >
-                    new cave
-                </button>
                 <div>
+                    <button
+                        className="start-button"
+                        onClick={() => {
+                            crawl([0, 4]);
+                        }}
+                    >
+                        explore
+                    </button>
+                    <button
+                        className="new-button"
+                        onClick={() => {
+                            setMaze(mazeBuilder());
+                        }}
+                    >
+                        new cave
+                    </button>
+                </div>
+                {/* <div>
                     {
                         <div>
                             {messages.map((message, index) => {
@@ -126,7 +129,7 @@ export default function MazeCrawler() {
                             })}
                         </div>
                     }
-                </div>
+                </div> */}
             </div>
         </div>
     );
