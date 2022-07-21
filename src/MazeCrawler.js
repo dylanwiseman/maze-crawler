@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import maze from './maze';
 import mazeBuilder from './mazeBuilder';
+import Trees from './trees.png';
 
 export default function MazeCrawler() {
     // const maze = mazeBuilder();
@@ -65,57 +66,64 @@ export default function MazeCrawler() {
     }
 
     return (
-        <div className="container">
-            <div className="maze-container">
-                {maze.map((row, index) => {
-                    return (
-                        <div
-                            className="box-container"
-                            id={`row-${index}`}
-                            key={index}
-                        >
-                            {row.map((box, index) => {
-                                return (
-                                    <div
-                                        className={`box ${
-                                            box === 1 ? 'one' : ''
-                                        } ${box === 9 ? 'nine' : ''} 
-                                        ${box === 7 ? 'seven' : ''} ${
-                                            box === 2 ? 'two' : ''
-                                        }`}
-                                        key={index}
-                                        id={`box-${index}`}
-                                    ></div>
-                                );
+        <div className="container" id="gradient">
+            <div className="trees">
+                <img src={Trees} alt="" width="200" height="100" />
+            </div>
+            <div className="environment">
+                <div className="maze-container">
+                    {maze.map((row, index) => {
+                        return (
+                            <div
+                                className="box-container"
+                                id={`row-${index}`}
+                                key={index}
+                            >
+                                {row.map((box, index) => {
+                                    return (
+                                        <div
+                                            className={`box ${
+                                                box === 1 ||
+                                                box === 2 ||
+                                                box === 7
+                                                    ? 'one'
+                                                    : ''
+                                            } ${box === 9 ? 'nine' : ''} 
+                                         ${box === 2 ? 'two' : ''}`}
+                                            key={index}
+                                            id={`box-${index}`}
+                                        ></div>
+                                    );
+                                })}
+                            </div>
+                        );
+                    })}
+                </div>
+                <button
+                    className="start-button"
+                    onClick={() => {
+                        crawl([0, 4]);
+                    }}
+                >
+                    start
+                </button>
+                <button
+                    className="start-button"
+                    onClick={() => {
+                        setMaze(mazeBuilder());
+                    }}
+                >
+                    new cave
+                </button>
+                <div>
+                    {
+                        <div>
+                            {messages.map((message, index) => {
+                                return <h6 key={index}>{message}</h6>;
                             })}
                         </div>
-                    );
-                })}
-            </div>
-            <button
-                className="start-button"
-                onClick={() => {
-                    crawl([3, 0]);
-                }}
-            >
-                start
-            </button>
-            <button
-                className="start-button"
-                onClick={() => {
-                    setMaze(mazeBuilder());
-                }}
-            >
-                new cave
-            </button>
-            <div>
-                {
-                    <div>
-                        {messages.map((message, index) => {
-                            return <h6 key={index}>{message}</h6>;
-                        })}
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </div>
     );
