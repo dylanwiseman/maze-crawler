@@ -1,72 +1,13 @@
 import React, { useState } from 'react';
-// import maze from './maze';
 import mazeBuilder from './mazeBuilder';
-// import blankMaze from './maze';
 import Trees from './trees.png';
 import Mountains from './mountains1.png';
 import MountainsR from './mountainsright.png';
+import exploreCave from './exploreCave';
 
 export default function MazeCrawler() {
-    // const maze = mazeBuilder();
-    // const messages = [];
-    const [messages, setMessages] = useState([]);
     const [maze, setMaze] = useState(mazeBuilder());
 
-    function crawl(start) {
-        // console.log('starting crawl');
-        console.log(maze);
-        const path = [];
-        let solved = false;
-        const traverse = (row, col) => {
-            if (maze[row][col] === 2) {
-                path.push([row, col]);
-                solved = true;
-                messages.push(
-                    `MazeCrawler finished the maze at Row: ${row}, Col: ${col}`
-                );
-                // console.log('solved!');
-
-                path.forEach((step) => {
-                    document
-                        .querySelector(`#row-${step[0]}`)
-                        ?.querySelector(`#box-${step[1]}`)
-                        .classList.add('path');
-                });
-                // setMessages([
-                //     ...messages,
-                //     `MazeCrawler finished the maze at Row: ${row}, Col: ${col}`,
-                // ]);
-                return path;
-            } else if (
-                (maze[row][col] === 1 || maze[row][col] === 7) &&
-                !solved
-            ) {
-                // console.log('traversing');
-                messages.push(`Traversed to: (Row: ${row}, Col: ${col})`);
-                path.push([row, col]);
-                maze[row][col] = 9;
-                if (row < maze.length - 1 && !solved) {
-                    traverse(row + 1, col);
-                }
-                if (col < maze[row].length && !solved) {
-                    traverse(row, col + 1);
-                }
-                if (row > 0 && !solved) {
-                    traverse(row - 1, col);
-                }
-                if (col > 0 && !solved) {
-                    traverse(row, col - 1);
-                }
-                if (!solved) {
-                    messages.push('backtracking from: ', row, col);
-                    path.pop();
-                }
-            }
-        };
-
-        traverse(...start);
-        return messages;
-    }
     const starGenerator = () => {
         let starArray = [];
         for (let i = 0; i < 100; i++) {
@@ -96,17 +37,17 @@ export default function MazeCrawler() {
         <div className="container" id="gradient">
             {starGenerator()}
             <h1>It's getting late... you should probably head home...</h1>
-            <div className="trees">
-                <img src={Trees} alt="" width="200" height="100" />
-            </div>
-            <div className="trees-two">
-                <img src={Trees} alt="" width="200" height="100" />
-            </div>
             <div className="mountains-one">
                 <img src={MountainsR} alt="" width="400" height="100" />
             </div>
             <div className="mountains-two">
                 <img src={Mountains} alt="" width="460" height="130" />
+            </div>
+            <div className="trees">
+                <img src={Trees} alt="" width="200" height="100" />
+            </div>
+            <div className="trees-two">
+                <img src={Trees} alt="" width="200" height="100" />
             </div>
             <div className="eyeone"></div>
             <div className="eyetwo"></div>
@@ -143,7 +84,7 @@ export default function MazeCrawler() {
                     <button
                         className="start-button"
                         onClick={() => {
-                            crawl([0, 4]);
+                            exploreCave([0, 4], maze);
                         }}
                     >
                         explore
@@ -157,15 +98,6 @@ export default function MazeCrawler() {
                         new cave
                     </button>
                 </div>
-                {/* <div>
-                    {
-                        <div>
-                            {messages.map((message, index) => {
-                                return <h6 key={index}>{message}</h6>;
-                            })}
-                        </div>
-                    }
-                </div> */}
             </div>
         </div>
     );
