@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 // import maze from './maze';
 import mazeBuilder from './mazeBuilder';
 import Trees from './trees.png';
+import Mountains from './mountains1.png';
+import MountainsR from './mountainsright.png';
 
 export default function MazeCrawler() {
     // const maze = mazeBuilder();
@@ -64,9 +66,34 @@ export default function MazeCrawler() {
         traverse(...start);
         return messages;
     }
+    const starGenerator = () => {
+        let starArray = [];
+        for (let i = 0; i < 100; i++) {
+            let x = Math.random() * 100;
+            let y = Math.random() * 24;
+            starArray.push(
+                <div
+                    className="star"
+                    style={{
+                        top: `${y}%`,
+                        left: `${x}%`,
+                        backgroundColor: `${
+                            Math.floor(x) % 2 === 0
+                                ? 'white'
+                                : Math.floor(x) % 3 === 0
+                                ? 'pink'
+                                : 'yellow'
+                        }`,
+                    }}
+                ></div>
+            );
+        }
+        return starArray;
+    };
 
     return (
         <div className="container" id="gradient">
+            {starGenerator()}
             <h1>It's getting late... you should probably head home...</h1>
             <div className="trees">
                 <img src={Trees} alt="" width="200" height="100" />
@@ -74,6 +101,14 @@ export default function MazeCrawler() {
             <div className="trees-two">
                 <img src={Trees} alt="" width="200" height="100" />
             </div>
+            <div className="mountains-one">
+                <img src={MountainsR} alt="" width="400" height="100" />
+            </div>
+            <div className="mountains-two">
+                <img src={Mountains} alt="" width="460" height="130" />
+            </div>
+            <div className="eyeone"></div>
+            <div className="eyetwo"></div>
             <div className="environment">
                 <div className="maze-container">
                     {maze.map((row, index) => {

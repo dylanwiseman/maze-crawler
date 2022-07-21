@@ -4,14 +4,41 @@
         darkblue,
         purple,
         orange,
-        lightblue,
-        rgb(160, 255, 255)
+        lightblue
     );
     background-size: 300px 200%;
-
     -webkit-animation: Sunset 180s ease infinite;
     -moz-animation: Sunset 180s ease infinite;
     animation: Sunset 180s ease infinite;
+}
+
+.star {
+    background-color: white;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 5%;
+    animation: StarOne 180s ease infinite;
+}
+.eyeone {
+    background-color: rgb(242, 255, 0);
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 24%;
+    right: 46%;
+    z-index: 2;
+    animation: eyes 180s ease infinite;
+}
+.eyetwo {
+    background-color: rgb(242, 255, 0);
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 24%;
+    right: 46.2%;
+    animation: eyes 180s ease infinite;
+    z-index: 2;
 }
 
 @-webkit-keyframes Sunset {
@@ -48,6 +75,49 @@
     }
 }
 
+@keyframes StarOne {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes Settle {
+    0% {
+        transform: translateY(100px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(100px);
+    }
+}
+@keyframes eyes {
+    0% {
+        opacity: 0;
+    }
+    40.9% {
+        opacity: 0;
+    }
+    41% {
+        opacity: 1;
+    }
+    54.9% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -58,19 +128,31 @@
 }
 h1 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
+    font-size: 0.4rem;
     margin-top: 8rem;
     color: white;
+    animation: Settle 180s ease infinite;
 }
 .trees {
     position: absolute;
     bottom: 73%;
-    left: 50%;
+    left: 49%;
 }
 .trees-two {
     position: absolute;
     bottom: 73%;
-    left: 40%;
+    right: 49%;
+}
+.mountains-one {
+    position: absolute;
+    bottom: 73%;
+    right: 0%;
+}
+.mountains-two {
+    position: absolute;
+    bottom: 73%;
+    left: -4%;
+    transform: scale(-1, 1);
 }
 .environment {
     position: absolute;
