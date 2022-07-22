@@ -6,7 +6,7 @@
         orange,
         lightblue
     );
-    background-size: 300px 200%;
+    background-size: 300px 2000px;
     -webkit-animation: Sunset 180s ease infinite;
     -moz-animation: Sunset 180s ease infinite;
     animation: Sunset 180s ease infinite;
@@ -25,7 +25,7 @@
     position: absolute;
     width: 2px;
     height: 2px;
-    top: 24%;
+    top: 296px;
     right: 46%;
     z-index: 2;
     animation: eyes 180s ease infinite;
@@ -35,43 +35,46 @@
     position: absolute;
     width: 2px;
     height: 2px;
-    top: 24%;
+    top: 296px;
     right: 46.2%;
     animation: eyes 180s ease infinite;
     z-index: 2;
 }
+/* .setColor {
+    animation: SetColor 180s ease infinite;
+} */
 
 @-webkit-keyframes Sunset {
     0% {
-        background-position: 0% 175%;
+        background-position: 0% 170%;
     }
     50% {
         background-position: 0% 0%;
     }
     100% {
-        background-position: 0% 175%;
+        background-position: 0% 170%;
     }
 }
 @-moz-keyframes Sunset {
     0% {
-        background-position: 0% 175%;
+        background-position: 0% 170%;
     }
     50% {
         background-position: 0% 0%;
     }
     100% {
-        background-position: 0% 175%;
+        background-position: 0% 170%;
     }
 }
 @keyframes Sunset {
     0% {
-        background-position: 0% 175%;
+        background-position: 0% 170%;
     }
     50% {
         background-position: 0% 0%;
     }
     100% {
-        background-position: 0% 175%;
+        background-position: 0% 170%;
     }
 }
 
@@ -79,8 +82,14 @@
     0% {
         opacity: 0;
     }
+    10% {
+        opacity: 0;
+    }
     50% {
         opacity: 1;
+    }
+    90% {
+        opacity: 0;
     }
     100% {
         opacity: 0;
@@ -99,13 +108,24 @@
 }
 @keyframes Set {
     0% {
-        transform: translateY(100px);
+        transform: translateY(110px);
     }
     50% {
-        transform: translateY(290px);
+        transform: translateY(500px);
     }
     100% {
-        transform: translateY(100px);
+        transform: translateY(110px);
+    }
+}
+@keyframes SetColor {
+    0% {
+        fill: 'yellow';
+    }
+    50% {
+        fill: red;
+    }
+    100% {
+        fill: 'yellow';
     }
 }
 @keyframes eyes {
@@ -128,13 +148,38 @@
         opacity: 0;
     }
 }
-
+@keyframes shootingStar {
+    21% {
+        opacity: 0;
+        top: 5%;
+        right: 60%;
+        width: 0px;
+        height: 0px;
+    }
+    22% {
+        opacity: 1;
+        top: 6%;
+        right: 70%;
+        width: 4px;
+        height: 3px;
+    }
+    23% {
+        opacity: 0;
+        top: 7%;
+        right: 80%;
+        width: 0px;
+        height: 0px;
+    }
+}
+body {
+    background-color: black;
+}
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: 100vh;
+    height: 1000px;
     width: 100%;
 }
 h1 {
@@ -147,24 +192,29 @@ h1 {
 .sun {
     animation: Set 180s ease infinite;
 }
+.shooting-star {
+    position: absolute;
+    background-color: white;
+    animation: shootingStar 180s linear infinite;
+}
 .trees {
     position: absolute;
-    bottom: 73%;
+    top: 207px;
     left: 49%;
 }
 .trees-two {
     position: absolute;
-    bottom: 73%;
+    top: 207px;
     right: 49%;
 }
 .mountains-one {
     position: absolute;
-    bottom: 73%;
+    top: 203px;
     right: 0%;
 }
 .mountains-two {
     position: absolute;
-    bottom: 73%;
+    top: 171px;
     left: -4%;
     transform: scale(-1, 1);
 }
@@ -174,7 +224,8 @@ h1 {
     /* border-top: solid 1px rgb(77, 77, 77); */
     width: 100%;
     bottom: 0;
-    height: 75%;
+    top: 300px;
+    /* height: 75%; */
     left: 0;
     display: flex;
     flex-direction: column;

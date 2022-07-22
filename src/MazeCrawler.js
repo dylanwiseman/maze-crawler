@@ -4,21 +4,22 @@ import Trees from './trees.png';
 import Mountains from './mountains1.png';
 import MountainsR from './mountainsright.png';
 import exploreCave from './exploreCave';
-import Moon from './crescent-moon-svgrepo-com.svg';
 
 export default function MazeCrawler() {
     const [maze, setMaze] = useState(mazeBuilder());
 
     const starGenerator = () => {
         let starArray = [];
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 300; i++) {
             let x = Math.random() * 100;
-            let y = Math.random() * 24;
+            let y = Math.random() * 300;
             starArray.push(
                 <div
                     className="star"
                     style={{
-                        top: `${y}%`,
+                        width: `${Math.floor(y) % 2 === 0 ? '1px' : '2px'}`,
+                        height: `${Math.floor(y) % 2 === 0 ? '1px' : '2px'}`,
+                        top: `${y}px`,
                         left: `${x}%`,
                         backgroundColor: `${
                             Math.floor(x) % 2 === 0
@@ -39,10 +40,16 @@ export default function MazeCrawler() {
             {starGenerator()}
 
             <svg width="100" height="100" className="sun">
-                <circle cx="50" cy="50" r="20" fill="yellow" />
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="20"
+                    fill="yellow"
+                    // className="setColor"
+                />
             </svg>
-
-            <h1>It's getting late... you should probably head home...</h1>
+            <div className="shooting-star"></div>
+            {/* <h1>It's getting late... you should probably head home...</h1> */}
             <div className="mountains-one">
                 <img src={MountainsR} alt="" width="400" height="100" />
             </div>
