@@ -97,6 +97,17 @@
         transform: translateY(100px);
     }
 }
+@keyframes Set {
+    0% {
+        transform: translateY(100px);
+    }
+    50% {
+        transform: translateY(290px);
+    }
+    100% {
+        transform: translateY(100px);
+    }
+}
 @keyframes eyes {
     0% {
         opacity: 0;
@@ -132,6 +143,9 @@ h1 {
     margin-top: 8rem;
     color: white;
     animation: Settle 180s ease infinite;
+}
+.sun {
+    animation: Set 180s ease infinite;
 }
 .trees {
     position: absolute;

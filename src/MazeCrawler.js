@@ -4,6 +4,7 @@ import Trees from './trees.png';
 import Mountains from './mountains1.png';
 import MountainsR from './mountainsright.png';
 import exploreCave from './exploreCave';
+import Moon from './crescent-moon-svgrepo-com.svg';
 
 export default function MazeCrawler() {
     const [maze, setMaze] = useState(mazeBuilder());
@@ -36,6 +37,11 @@ export default function MazeCrawler() {
     return (
         <div className="container" id="gradient">
             {starGenerator()}
+
+            <svg width="100" height="100" className="sun">
+                <circle cx="50" cy="50" r="20" fill="yellow" />
+            </svg>
+
             <h1>It's getting late... you should probably head home...</h1>
             <div className="mountains-one">
                 <img src={MountainsR} alt="" width="400" height="100" />
