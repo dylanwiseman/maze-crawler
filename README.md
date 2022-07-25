@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# Sunset Cave Maze
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+What started as an attempt to visualize a maze-solving algorithm has turned into an art project of sorts.
 
-## Available Scripts
+The Sunset Cave Maze project can be split into 3 parts:
 
-In the project directory, you can run:
+## 1. The Maze Solver
 
-### `npm start`
+This is where I started. After bombing a coding interview, I set out to master recursive maze solving algorithms. After learning the code, I wanted to create a visualization for it. That was simple enough; the maze is a 2D array of 1s and 0s, so I can render a matrix of tiny divs and assign them classes according to whether they contained a 1 (gray), a 0 (black), or were part of the maze solvers chosen path through the maze (green). The 'explore' button triggers the mazeSolver and shows the path through the maze.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 2. The Maze Builder
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+One maze is not enough, I need infinite mazes. Time for a maze building program. For this part, I intentionally did not search for existing solutions on the internet, I wanted to come up with something from my own mind, even if it was not the cleanest or most efficient. The solution I decided on was to have two "snakes", one starting at the start, one at the end. The 'startSnake' leaves a trail of 1s and is twice as likely to move right, and the 'endSnake' leaves a trail of 7s and is twice as likely to move left. The two snakes move through a matrix of blank 0s until they find each other (or take too long). The result looks less like a maze, and more like a cave. The 'new cave' button generates a new, random cave.
 
-### `npm test`
+## 3. The Sunset :')
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If it's a cave, might as well add some landscape around it. Some trees and mountains made in Photoshop, a CSS sunset, and a randomly generated starry night sky. Keep an eye out for the shooting star right after dusk, and the animal in the woods at midnight.

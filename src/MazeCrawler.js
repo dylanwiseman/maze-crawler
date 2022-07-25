@@ -40,16 +40,10 @@ export default function MazeCrawler() {
             {starGenerator()}
 
             <svg width="100" height="100" className="sun">
-                <circle
-                    cx="50"
-                    cy="50"
-                    r="20"
-                    fill="yellow"
-                    // className="setColor"
-                />
+                <circle cx="50" cy="50" r="20" fill="yellow" />
             </svg>
             <div className="shooting-star"></div>
-            {/* <h1>It's getting late... you should probably head home...</h1> */}
+
             <div className="mountains-one">
                 <img src={MountainsR} alt="" width="400" height="100" />
             </div>
@@ -62,6 +56,9 @@ export default function MazeCrawler() {
             <div className="trees-two">
                 <img src={Trees} alt="" width="200" height="100" />
             </div>
+            <p>
+                It's getting late... you should probably find your way home...
+            </p>
             <div className="eyeone"></div>
             <div className="eyetwo"></div>
             <div className="environment">

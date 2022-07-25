@@ -1,49 +1,3 @@
-#gradient {
-    background: linear-gradient(
-        rgb(0, 0, 37),
-        darkblue,
-        purple,
-        orange,
-        lightblue
-    );
-    background-size: 300px 2000px;
-    -webkit-animation: Sunset 180s ease infinite;
-    -moz-animation: Sunset 180s ease infinite;
-    animation: Sunset 180s ease infinite;
-}
-
-.star {
-    background-color: white;
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    top: 5%;
-    animation: StarOne 180s ease infinite;
-}
-.eyeone {
-    background-color: rgb(242, 255, 0);
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    top: 296px;
-    right: 46%;
-    z-index: 2;
-    animation: eyes 180s ease infinite;
-}
-.eyetwo {
-    background-color: rgb(242, 255, 0);
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    top: 296px;
-    right: 46.2%;
-    animation: eyes 180s ease infinite;
-    z-index: 2;
-}
-/* .setColor {
-    animation: SetColor 180s ease infinite;
-} */
-
 @-webkit-keyframes Sunset {
     0% {
         background-position: 0% 170%;
@@ -77,8 +31,7 @@
         background-position: 0% 170%;
     }
 }
-
-@keyframes StarOne {
+@keyframes Star {
     0% {
         opacity: 0;
     }
@@ -171,8 +124,66 @@
         height: 0px;
     }
 }
+@keyframes textOne {
+    5% {
+        opacity: 1;
+    }
+    9% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 body {
     background-color: black;
+    margin: 0;
+    padding: 0;
+}
+#gradient {
+    background: linear-gradient(
+        rgb(0, 0, 37),
+        darkblue,
+        purple,
+        orange,
+        lightblue
+    );
+    background-size: 300px 2000px;
+    -webkit-animation: Sunset 180s ease infinite;
+    -moz-animation: Sunset 180s ease infinite;
+    animation: Sunset 180s ease infinite;
+}
+
+.star {
+    background-color: white;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 5%;
+    animation: Star 180s ease infinite;
+}
+.eyeone {
+    background-color: rgb(242, 255, 0);
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 296px;
+    right: 46%;
+    z-index: 2;
+    animation: eyes 180s ease infinite;
+}
+.eyetwo {
+    background-color: rgb(242, 255, 0);
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 296px;
+    right: 46.2%;
+    animation: eyes 180s ease infinite;
+    z-index: 2;
 }
 .container {
     display: flex;
@@ -182,12 +193,14 @@ body {
     height: 1000px;
     width: 100%;
 }
-h1 {
+p {
+    position: absolute;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.4rem;
-    margin-top: 8rem;
+    font-size: 0.5rem;
+    margin-top: 90px;
     color: white;
-    animation: Settle 180s ease infinite;
+    text-align: center;
+    animation: textOne 180s ease infinite;
 }
 .sun {
     animation: Set 180s ease infinite;
@@ -221,11 +234,9 @@ h1 {
 .environment {
     position: absolute;
     background-color: black;
-    /* border-top: solid 1px rgb(77, 77, 77); */
     width: 100%;
     bottom: 0;
     top: 300px;
-    /* height: 75%; */
     left: 0;
     display: flex;
     flex-direction: column;
@@ -250,15 +261,33 @@ h1 {
     width: 0.5rem;
     background-color: black;
 }
+@media screen and (max-width: 647px) {
+    .maze-container {
+        width: 20rem;
+    }
+    .box {
+        width: 0.25rem;
+        height: 0.25rem;
+    }
+    .mountains-two {
+        width: 16rem;
+    }
+    .environment {
+        border-top: 1px solid rgb(41, 41, 41);
+    }
+}
 
 button {
     border-radius: 0px;
-    border: solid 2px white;
+    border: none;
     cursor: pointer;
     font-family: 'Press Start 2P', cursive;
-    color: white;
+    color: gray;
     background-color: black;
     margin: 0 2rem;
+}
+button:hover {
+    color: orange;
 }
 
 .one {
