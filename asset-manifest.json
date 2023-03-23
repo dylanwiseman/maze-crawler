@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/maze-crawler/static/css/main.c17ddcdb.css",
-    "main.js": "/maze-crawler/static/js/main.0cba148b.js",
+    "main.js": "/maze-crawler/static/js/main.aa26ed0c.js",
     "static/media/mountains1.png": "/maze-crawler/static/media/mountains1.4e692608378ed2d4ac29.png",
     "static/media/mountainsright.png": "/maze-crawler/static/media/mountainsright.ade28e1aca4738d74823.png",
     "static/media/trees.png": "/maze-crawler/static/media/trees.076c07e4127464a72038.png",
     "index.html": "/maze-crawler/index.html",
     "main.c17ddcdb.css.map": "/maze-crawler/static/css/main.c17ddcdb.css.map",
-    "main.0cba148b.js.map": "/maze-crawler/static/js/main.0cba148b.js.map"
+    "main.aa26ed0c.js.map": "/maze-crawler/static/js/main.aa26ed0c.js.map"
   },
   "entrypoints": [
     "static/css/main.c17ddcdb.css",
-    "static/js/main.0cba148b.js"
+    "static/js/main.aa26ed0c.js"
   ]
 }
